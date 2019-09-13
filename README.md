@@ -1,3 +1,3 @@
 # vidly
 
-It will be a simple website built on the ASP.NET MVC 5 
+This is a simple sample of the website built on the ASP.NET MVC 5 

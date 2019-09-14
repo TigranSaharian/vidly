@@ -171,7 +171,7 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201909132149518_ApplyAnnotationsToCutomerName.cs" />
     <Compile Include="Migrations\201909132149518_ApplyAnnotationsToCutomerName.Designer.cs">
       <DependentUpon>201909132149518_ApplyAnnotationsToCutomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909141854552_InitialModel1.cs" />
+    <Compile Include="Migrations\201909141854552_InitialModel1.Designer.cs">
+      <DependentUpon>201909141854552_InitialModel1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -262,9 +266,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Movie\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Movie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909132149518_ApplyAnnotationsToCutomerName.resx">
       <DependentUpon>201909132149518_ApplyAnnotationsToCutomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909141854552_InitialModel1.resx">
+      <DependentUpon>201909141854552_InitialModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

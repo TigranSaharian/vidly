@@ -3,15 +3,16 @@ namespace vidly.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class populateMembershipType : DbMigration
+    public partial class populateMembershipType1 : DbMigration
     {
         public override void Up()
         {
-            Sql("INSERT INTO MembershipTypes (Id, SignUpFee,DurationInMonths, DiscountRate, Name) VALUES (1, 0, 0, 0, Monthly)");
+            AlterColumn("dbo.MembershipTypes", "Name", c => c.String(nullable: false));
         }
         
         public override void Down()
         {
+            AlterColumn("dbo.MembershipTypes", "Name", c => c.String());
         }
     }
 }

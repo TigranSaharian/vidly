@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using vidly.Models;
@@ -42,14 +40,6 @@ namespace vidly.Controllers
                 return View(customer);
             }
         }
-        //private IEnumerable<Customer> GetCustomers()
-        //{
-        //    return new List<Customer>
-        //    {
-        //        new Customer{Id = 1, Name = "Jhone Smith"},
-        //        new Customer{Id = 2, Name = "Freddie Mercury"}
-        //    };
-        //}
     }
 
 }

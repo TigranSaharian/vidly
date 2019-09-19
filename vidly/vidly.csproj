@@ -211,9 +211,13 @@
     <Compile Include="Migrations\201909142055071_AddNamePropToCustomer.Designer.cs">
       <DependentUpon>201909142055071_AddNamePropToCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909142059075_AddNamePropToCustomer1.cs" />
-    <Compile Include="Migrations\201909142059075_AddNamePropToCustomer1.Designer.cs">
-      <DependentUpon>201909142059075_AddNamePropToCustomer1.cs</DependentUpon>
+    <Compile Include="Migrations\201909142233067_AddGenreTOMovies.cs" />
+    <Compile Include="Migrations\201909142233067_AddGenreTOMovies.Designer.cs">
+      <DependentUpon>201909142233067_AddGenreTOMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909152229389_AddGenreTOMovies1.cs" />
+    <Compile Include="Migrations\201909152229389_AddGenreTOMovies1.Designer.cs">
+      <DependentUpon>201909152229389_AddGenreTOMovies1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -334,8 +338,11 @@
     <EmbeddedResource Include="Migrations\201909142055071_AddNamePropToCustomer.resx">
       <DependentUpon>201909142055071_AddNamePropToCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909142059075_AddNamePropToCustomer1.resx">
-      <DependentUpon>201909142059075_AddNamePropToCustomer1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909142233067_AddGenreTOMovies.resx">
+      <DependentUpon>201909142233067_AddGenreTOMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909152229389_AddGenreTOMovies1.resx">
+      <DependentUpon>201909152229389_AddGenreTOMovies1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

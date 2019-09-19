@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using vidly.Models;
-using vidly.ViewModel;
 
 namespace vidly.Controllers
 {
@@ -22,30 +19,9 @@ namespace vidly.Controllers
             _contex.Dispose();
         }
 
-        // GET: Movies
-        //public ActionResult Random()
-        //{
-        //    var movie = new Movie() { Name = "Shrek!!" };
-
-        //    var Customer = new List<Customer>
-        //    {
-        //        new Customer{Name = "Customer_1"},
-        //        new Customer{Name = "Customer_2"}
-        //    };
-
-        //    var viewModel = new RandomMovieViewModel
-        //    {
-        //        Movie = movie,
-        //        Customers = Customer
-        //    };
-        //    return View(viewModel);
-        //    //return HttpNotFound();
-        //    //return Content("Hello Worls");
-        //}
-
         public ViewResult Index()
         {
-            var movies = _contex.Movies.ToList();
+            var movies = _contex.Movies.Include(g => g.Genre).ToList();
             return View(movies);
         }
 
@@ -61,15 +37,6 @@ namespace vidly.Controllers
                 return View(movies);
             }
         }
-
-        //private IEnumerable<Movie> GetMovies()
-        //{
-        //    return new List<Movie>
-        //    {
-        //        new Movie{Id = 1, Name = "Shreck" },
-        //        new Movie{Id = 2, Name = "Wall li"}
-        //    };
-        //}
 
         // Route test
 

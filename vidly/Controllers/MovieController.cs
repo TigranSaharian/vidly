@@ -27,7 +27,7 @@ namespace vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            var movies = _contex.Movies.FirstOrDefault(c => c.Id == id);
+            var movies = _contex.Movies.Include(g => g.Genre).FirstOrDefault(c => c.Id == id);
             if (movies == null)
             {
                 return HttpNotFound();

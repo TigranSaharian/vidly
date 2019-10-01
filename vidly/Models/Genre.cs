@@ -4,7 +4,6 @@ namespace vidly.Models
 {
     public class Genre
     {
-        [Key]
         public byte Id { get; set; }
         [Required]
         [StringLength(255)]

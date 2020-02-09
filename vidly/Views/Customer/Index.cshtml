@@ -9,8 +9,7 @@
 {
     <p>We Don't have any customers yet</p>
 }
-
-
+<button class="btn btn-primary" style="margin-bottom: 20px" onclick="window.location.href='@Url.Action("New", "Customer")'">New Customer</button>
 
 <table class="table table-bordered table-hover">
     <thead>
@@ -23,7 +22,7 @@
         @foreach (var customer in Model)
         {
             <tr>
-                <td>@Html.ActionLink(customer.Name, "Details", "Customer", new { id = customer.Id }, null)</td>
+                <td>@Html.ActionLink(customer.Name, "Edit", "Customer", new { id = customer.Id }, null)</td>
                 <td>@customer.MembershipType.Name</td>
             </tr>
         }

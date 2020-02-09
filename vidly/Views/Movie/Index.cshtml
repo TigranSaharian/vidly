@@ -4,8 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
+<h2>Movies</h2>
+<button class="btn btn-primary" style="margin-bottom: 20px" onclick="window.location.href='@Url.Action("New", "Movie")'">New Movie</button>
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -18,7 +18,7 @@
         {
             <tr>
                 @*<th>@movie.Name</th>*@
-                <th>@Html.ActionLink(movie.Name, "Details", "Movie", new {id = movie.Id}, null)</th>
+                <th>@Html.ActionLink(movie.Name, "Edit", "Movie", new { id = movie.Id }, null)</th>
                 <th>@movie.Genre.Name</th>
             </tr>
         }

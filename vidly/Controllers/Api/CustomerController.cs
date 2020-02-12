@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Net;
 using System.Web.Http;
 using vidly.Dtos;
@@ -17,9 +18,13 @@ namespace vidly.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        public IEnumerable<CustomerDto> GetCutomers()
+        public IHttpActionResult GetCutomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+            var customersDtos =  _context.Customers
+                .Include(x => x.MembershipType)
+                .ToList()
+                .Select(Mapper.Map<Customer, CustomerDto>);
+            return Ok(customersDtos);
         }
 
         public CustomerDto GetCustomer(int id)
@@ -31,7 +36,7 @@ namespace vidly.Controllers.Api
         }
 
         [HttpPost]
-        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
+        public CustomerDto CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
                 BadRequest();
@@ -39,7 +44,7 @@ namespace vidly.Controllers.Api
             _context.Customers.Add(customer);
             _context.SaveChanges();
             customerDto.Id = customer.Id;
-            return Created(new Uri(string.Format(Request.RequestUri + customer.Id.ToString())), customerDto);
+            return  customerDto;
         }
 
         [HttpPut]

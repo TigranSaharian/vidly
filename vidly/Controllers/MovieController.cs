@@ -23,8 +23,7 @@ namespace vidly.Controllers
 
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(g => g.Genre).ToList();
-            return View(movies);
+            return User.IsInRole(RoleName.CanManageMovies) ? View("List") : View("ReadOnlyList");
         }
 
         public ActionResult Details(int id)
@@ -40,6 +39,7 @@ namespace vidly.Controllers
             }
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -72,7 +72,6 @@ namespace vidly.Controllers
                 movieIdDb.Name = movie.Name;
                 movieIdDb.NumberInStock = movie.NumberInStock;
                 movieIdDb.ReleaseDate = movie.ReleaseDate;
-                movieIdDb.DateAdded = movie.DateAdded;
                 movieIdDb.Genre = movie.Genre;
             }
             _context.SaveChanges();
